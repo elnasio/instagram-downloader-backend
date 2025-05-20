@@ -2,10 +2,10 @@ from flask import Flask, request, jsonify
 import yt_dlp
 import os
 import re
+from datetime import datetime
 
 app = Flask(__name__)
 
-# Validasi sederhana link Instagram
 def is_valid_instagram_url(url):
     return isinstance(url, str) and re.match(r"^https:\/\/(www\.)?instagram\.com\/(p|reel|tv)\/[a-zA-Z0-9_\-]+\/?", url)
 
@@ -20,7 +20,6 @@ def fetch_video():
             "message": "URL Instagram tidak valid atau kosong"
         }), 400
 
-    # Periksa apakah cookies.txt tersedia
     cookie_path = "cookies.txt"
     use_cookies = os.path.isfile(cookie_path)
 
@@ -31,6 +30,8 @@ def fetch_video():
 
     if use_cookies:
         ydl_opts['cookiefile'] = cookie_path
+    else:
+        print("[WARNING] cookies.txt tidak ditemukan, kemungkinan akan gagal.")
 
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
@@ -38,6 +39,7 @@ def fetch_video():
 
             return jsonify({
                 "status": "success",
+                "timestamp": datetime.utcnow().isoformat() + "Z",
                 "title": info.get("title"),
                 "video_url": info.get("url"),
                 "thumbnail": info.get("thumbnail"),
@@ -50,7 +52,7 @@ def fetch_video():
             "status": "error",
             "message": "Gagal mengambil video. Instagram mungkin butuh login atau cookie sudah expired.",
             "detail": str(de)
-        }), 500
+        }), 403
 
     except Exception as e:
         return jsonify({
