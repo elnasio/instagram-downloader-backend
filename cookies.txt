@@ -1,0 +1,12 @@
+# Netscape HTTP Cookie File
+.instagram.com	TRUE	/	FALSE	1716896400	csrftoken	3fWGxgYCLDqluMXVrEIX8GWrxOE7aHEG
+.instagram.com	TRUE	/	FALSE	1716896400	datr	IDAsaLkQ9MHREPNlsKn-jIeA
+.instagram.com	TRUE	/	FALSE	1716896400	ds_user_id	45209337656
+.instagram.com	TRUE	/	FALSE	1716896400	ig_did	D3584B8D-8D9A-4EAE-834C-5B9057D74A87
+.instagram.com	TRUE	/	FALSE	1716896400	ig_nrcb	1
+.instagram.com	TRUE	/	FALSE	1716896400	mid	aCwwlAAEAAEDhre4r_s7jlUCzYfH
+.instagram.com	TRUE	/	FALSE	1716896400	ps_l	1
+.instagram.com	TRUE	/	FALSE	1716896400	ps_n	1
+.instagram.com	TRUE	/	FALSE	1716896400	rur	HIL\05445209337656\0541779265105:01f7398c181058f7b4b8b05ca081d73ce863575a72cae3e18bc1071f07460fc11de5de97
+.instagram.com	TRUE	/	FALSE	1716896400	sessionid	45209337656%3A0njXTATh5cyw2z%3A20%3AAYfk9yt8pUg8dcd6GthCnq_mRiyGcHQ7rniC5pIsSA
+.instagram.com	TRUE	/	FALSE	1716896400	wd	403x949
